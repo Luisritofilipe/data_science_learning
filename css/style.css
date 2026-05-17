@@ -5,6 +5,9 @@ body {
     margin: auto;
     padding: 40px 10px 40px 10px;
 }
+p {
+    font-size: 13px;
+}
 li {
     display: block;
     list-style-type: none;
