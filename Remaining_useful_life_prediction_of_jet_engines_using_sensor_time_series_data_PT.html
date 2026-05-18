@@ -2,7 +2,7 @@
 
 <html lang="en">
 <head>
-<style>body { max-width: 1080px; margin: auto; padding: 20px; } p { font-size: 15px; }</style>
+<style>body { max-width: 1080px; margin: auto; padding: 20px; } p. li { font-size: 15px; }</style>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta property="og:title" content="Previsão da Vida Útil Remanescente de Motores a Jato com Base em Séries Temporais de Sensores" />
@@ -491,12 +491,12 @@
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h1 id="Methodology">Metodologia<a class="anchor-link" href="#Methodology">¶</a></h1><ul>
-<li><p>Tratamento de Dados e Pr&eacute;-processamento</p></li>
-<li><p>An&aacute;lise Explorat&oacute;ria de Dados e Avalia&ccedil;&atilde;o de Vari&aacute;veis</p></li>
-<li><p>Treino de Modelos</p></li>
-<li><p>Compara&ccedil;&atilde;o de Resultados</p></li>
-<li><p>Discuss&atilde;o</p></li>
-<li><p>Conclus&atilde;o</p></li>
+<li>Tratamento de Dados e Pr&eacute;-processamento</li>
+<li>An&aacute;lise Explorat&oacute;ria de Dados e Avalia&ccedil;&atilde;o de Vari&aacute;veis</li>
+<li>Treino de Modelos</li>
+<li>Compara&ccedil;&atilde;o de Resultados</li>
+<li>Discuss&atilde;o</li>
+<li>Conclus&atilde;o</li>
 </ul>
 </div>
 </div>
@@ -509,10 +509,10 @@
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h1 id="Data-Wrangling-and-Preprocessing">Tratamento e Pr&eacute;-processamento de Dados<a class="anchor-link" href="#Data-Wrangling-and-Preprocessing">¶</a></h1><p>O conjunto de dados &eacute; composto por ficheiros de treino, teste e vida &uacute;til remanescente (RUL). Neste estudo, foi utilizado apenas o subconjunto train_FD001. Este subconjunto cont&eacute;m dados de funcionamento de 100 motores a jato a operar sob uma &uacute;nica condi&ccedil;&atilde;o de avaria e uma &uacute;nica condi&ccedil;&atilde;o de funcionamento.<p>Cada motor foi monitorizado ao longo de um n&uacute;mero vari&aacute;vel de ciclos de funcionamento at&eacute; avariar. O conjunto de dados n&atilde;o inclui diretamente nomes de vari&aacute;veis; por esta raz&atilde;o, foram atribu&iacute;dos os nomes de vari&aacute;veis fornecidos no ficheiro de metadados associado. A estrutura do conjunto de dados est&aacute; organizada da seguinte forma:</p></p>
 <ul>
-<li><p>engine_id: identificador &uacute;nico de cada motor</p></li>
-<li><p>cycle: n&uacute;mero do ciclo de funcionamento</p></li>
-<li><p>setting_1 a setting_3: vari&aacute;veis de configura&ccedil;&atilde;o do funcionamento</p></li>
-<li><p>sensor_1 a sensor_21: medi&ccedil;&otilde;es de sensores recolhidas durante o funcionamento do motor</p></li>
+<li>engine_id: identificador &uacute;nico de cada motor</li>
+<li>cycle: n&uacute;mero do ciclo de funcionamento</li>
+<li>setting_1 a setting_3: vari&aacute;veis de configura&ccedil;&atilde;o do funcionamento</li>
+<li>sensor_1 a sensor_21: medi&ccedil;&otilde;es de sensores recolhidas durante o funcionamento do motor</li>
 </ul>
 <p>A vari&aacute;vel dependente, a vida &uacute;til remanescente (RUL), foi calculada subtraindo o ciclo atual ao ciclo m&aacute;ximo observado para cada motor.<p>As estat&iacute;sticas descritivas das vari&aacute;veis do conjunto de dados s&atilde;o apresentadas abaixo.</p><br/></p>
 </div>
