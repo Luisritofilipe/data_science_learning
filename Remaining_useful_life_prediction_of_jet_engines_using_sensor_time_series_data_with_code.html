@@ -2,7 +2,7 @@
 
 <html lang="en">
 <head>
-<style>body { max-width: 1080px; margin: auto; padding: 20px; } p { font-size: 15px; }</style>  
+<style>body { max-width: 1080px; margin: auto; padding: 20px; } p, li { font-size: 15px; }</style>  
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Remaining_useful_life_prediction_of_jet_engines_using_sensor_time_series_data_with_code</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
@@ -7883,12 +7883,12 @@ a.anchor-link {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h1 id="Methodology">Methodology<a class="anchor-link" href="#Methodology">¶</a></h1><ul>
-<li><p>Data Wrangling and Preprocessing</p></li>
-<li><p>Exploratory Data Analysis and Feature Evaluation</p></li>
-<li><p>Model Training</p></li>
-<li><p>Results Comparison</p></li>
-<li><p>Discussion</p></li>
-<li><p>Conclusion</p></li>
+<li>Data Wrangling and Preprocessing</li>
+<li>Exploratory Data Analysis and Feature Evaluation</li>
+<li>Model Training</li>
+<li>Results Comparison</li>
+<li>Discussion</li>
+<li>Conclusion</li>
 </ul>
 </div>
 </div>
@@ -7904,10 +7904,10 @@ a.anchor-link {
 
 <p>Each engine was monitored over a varying number of operational cycles until failure. The dataset does not include column labels directly; therefore, variable names provided in the accompanying metadata file were assigned. The dataset structure is organized as follows:</p></p>
 <ul>
-<li><p>engine_id: unique identifier for each engine</p></li>
-<li><p>cycle: operational cycle number</p></li>
-<li><p>setting_1 to setting_3: operational setting variables</p></li>
-<li><p>sensor_1 to sensor_21: sensor measurements collected during engine operation</p></li>
+<li>engine_id: unique identifier for each engine</li>
+<li>cycle: operational cycle number</li>
+<li>setting_1 to setting_3: operational setting variables</li>
+<li>sensor_1 to sensor_21: sensor measurements collected during engine operation</li>
 </ul>
 <p>The target variable, Remaining Useful Life (RUL), was computed by subtracting the current cycle from the maximum cycle observed for each engine.
 
