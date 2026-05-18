@@ -8224,7 +8224,7 @@ memory usage: 67.4 MB
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <br/>
-A feature named "Hour" was created for a better understanding if there is a pattern in a specific time of the day and also to enhance the predictive power of the models; this later proved to yield mixed results, depending on the machine learning algorithms.
+<p>A feature named "Hour" was created for a better understanding if there is a pattern in a specific time of the day and also to enhance the predictive power of the models; this later proved to yield mixed results, depending on the machine learning algorithms.</p>
 <br/>
 </div>
 </div>
@@ -8248,9 +8248,9 @@ A feature named "Hour" was created for a better understanding if there is a patt
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <br/>
-Higher average transaction amounts for fraudulent cases (Class = 1) are observed at hours 0 and 10, and these coincide with the lowest transaction counts. This may suggest that the elevated averages may be driven by a small number of high-value transactions. On the other hand, a higher transaction count is observed at hours 2 and 11 with average or below average amounts. While this could indicate potential fraud activity at these times, the number of days of this dataset is very limited to determine whether this pattern is stable or reproducible across multiple days.
+<p>Higher average transaction amounts for fraudulent cases (Class = 1) are observed at hours 0 and 10, and these coincide with the lowest transaction counts. This may suggest that the elevated averages may be driven by a small number of high-value transactions. On the other hand, a higher transaction count is observed at hours 2 and 11 with average or below average amounts. While this could indicate potential fraud activity at these times, the number of days of this dataset is very limited to determine whether this pattern is stable or reproducible across multiple days.
 
-<p>In addition to the “Hour” feature, another engineered feature “Amt_z” was introduced, which represents the standardized (z-score) transaction amount. These features aim to capture temporal dynamics, relative magnitude, and deviations from typical transaction behavior, providing models with more informative signals than the original variables alone. The original “Time” feature was removed due to redundancy with the derived “Hour” feature, which resulted in a better performance for the tree models.
+In addition to the “Hour” feature, another engineered feature “Amt_z” was introduced, which represents the standardized (z-score) transaction amount. These features aim to capture temporal dynamics, relative magnitude, and deviations from typical transaction behavior, providing models with more informative signals than the original variables alone. The original “Time” feature was removed due to redundancy with the derived “Hour” feature, which resulted in a better performance for the tree models.
 <br/></p>
 </div>
 </div>
@@ -8601,7 +8601,7 @@ The following table shows the computed feature coefficients ordered from highest
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <br/>
-The table above indicates that higher values of the engineered features “Hour” and “Amt_z” are associated with an increased likelihood of belonging to the positive class, as reflected by their positive coefficients in the Logistic Regression model. A confusion matrix is shown below for a minimum probability equal to the threshold corresponding to the maximum F1Score for a RecallScore equal or higher than 0.8.
+<p>The table above indicates that higher values of the engineered features “Hour” and “Amt_z” are associated with an increased likelihood of belonging to the positive class, as reflected by their positive coefficients in the Logistic Regression model. A confusion matrix is shown below for a minimum probability equal to the threshold corresponding to the maximum F1Score for a RecallScore equal or higher than 0.8.</p>
 <br/>
 </div>
 </div>
@@ -8742,7 +8742,7 @@ The table above indicates that higher values of the engineered features “Hour�
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <br/>
-The following table shows the computed feature importance ordered from highest to lowest.
+<p>The following table shows the computed feature importance ordered from highest to lowest.</p>
 <br/>
 </div>
 </div>
@@ -8888,7 +8888,7 @@ The following table shows the computed feature importance ordered from highest t
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <br/>
-There is a noticeable variation in the importance attributed to features V10, V12, and V14 across the different algorithms. In contrast, the engineered features exhibit relatively low importance in the Random Forest model, suggesting that the model relies more heavily on the original transformed variables. A confusion matrix is shown below for a minimum probability equal to the threshold corresponding to the maximum F1Score for a RecallScore equal or higher than 0.8.
+<p>There is a noticeable variation in the importance attributed to features V10, V12, and V14 across the different algorithms. In contrast, the engineered features exhibit relatively low importance in the Random Forest model, suggesting that the model relies more heavily on the original transformed variables. A confusion matrix is shown below for a minimum probability equal to the threshold corresponding to the maximum F1Score for a RecallScore equal or higher than 0.8.</p>
 <br/>
 </div>
 </div>
@@ -9029,7 +9029,7 @@ There is a noticeable variation in the importance attributed to features V10, V1
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <br/>
-The following table shows the computed feature importance from highest to lowest.
+<p>The following table shows the computed feature importance from highest to lowest.</p>
 <br/>
 </div>
 </div>
@@ -9175,7 +9175,7 @@ The following table shows the computed feature importance from highest to lowest
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <br/>
-The table above shows that XGboost also attributed high importance to features V14 and V10, a relative importance to engineered feature "Amt_z" and low importance to "Hour" features. A confusion matrix is shown below for a minimum probability equal to the threshold corresponding to the maximum F1Score for a RecallScore equal or higher than 0.8.
+<p>The table above shows that XGboost also attributed high importance to features V14 and V10, a relative importance to engineered feature "Amt_z" and low importance to "Hour" features. A confusion matrix is shown below for a minimum probability equal to the threshold corresponding to the maximum F1Score for a RecallScore equal or higher than 0.8.</p>
 <br/>
 </div>
 </div>
@@ -9199,8 +9199,8 @@ The table above shows that XGboost also attributed high importance to features V
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2>LightGBM</h2>
-<p>LightGBM is a high-performance gradient boosting framework built on decision tree algorithms. It is widely used for ranking, classification, and many other machine learning tasks. Works particularly well with large datasets and a large number of independent variables, optimizing heavily for speed and memory efficiency. LightGBM grows trees leaf-wise, evaluates all leaves and expands the single leaf that reduces the loss the most. It uses histogram-based algorithms to group continuous feature values into discrete bins. This drastically reduces memory usage and speeds up training. It can handle categorical features directly without requiring to manually apply encoding first. Because leaf-wise growth is quite aggressive, LightGBM can easily overfit, especially on smaller datasets. To prevent this, careful tuning of hyperparameters like max_depth, num_leaves, and min_data_in_leaf is strictly required.
-<br/></p>
+<p>LightGBM is a high-performance gradient boosting framework built on decision tree algorithms. It is widely used for ranking, classification, and many other machine learning tasks. Works particularly well with large datasets and a large number of independent variables, optimizing heavily for speed and memory efficiency. LightGBM grows trees leaf-wise, evaluates all leaves and expands the single leaf that reduces the loss the most. It uses histogram-based algorithms to group continuous feature values into discrete bins. This drastically reduces memory usage and speeds up training. It can handle categorical features directly without requiring to manually apply encoding first. Because leaf-wise growth is quite aggressive, LightGBM can easily overfit, especially on smaller datasets. To prevent this, careful tuning of hyperparameters like max_depth, num_leaves, and min_data_in_leaf is strictly required.</p>
+<br/>
 </div>
 </div>
 </div>
@@ -9316,7 +9316,7 @@ The table above shows that XGboost also attributed high importance to features V
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <br/>
-The following table shows the computed feature importance from highest to lowest.
+<p>The following table shows the computed feature importance from highest to lowest.</p>
 <br/>
 </div>
 </div>
@@ -9462,7 +9462,7 @@ The following table shows the computed feature importance from highest to lowest
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <br/>
-LightGBM assigns a similar pattern of feature importance to that of XGBoost. The most important features are essentially the same, although their relative rankings differ. The engineered features are among the least important for this model, indicating that the model derives most of its predictive power from the original variables. A confusion matrix is shown below for a minimum probability equal to the threshold corresponding to the maximum F1Score for a RecallScore equal or higher than 0.8.
+<p>LightGBM assigns a similar pattern of feature importance to that of XGBoost. The most important features are essentially the same, although their relative rankings differ. The engineered features are among the least important for this model, indicating that the model derives most of its predictive power from the original variables. A confusion matrix is shown below for a minimum probability equal to the threshold corresponding to the maximum F1Score for a RecallScore equal or higher than 0.8.</p>
 <br/>
 </div>
 </div>
@@ -9616,10 +9616,10 @@ LightGBM assigns a similar pattern of feature importance to that of XGBoost. The
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <br/>
-Based on the model comparison table above, LightGBM is selected as the final model due to its superior precision–recall trade-off and highest F1 Score. Both LightGBM and Random Forest demonstrate an excellent performance, with LightGBM achieving the highest F1 Score and PR-AUC, while Random Forest obtains the best ROC-AUC. This indicates that both models are highly effective, but they optimize different aspects of the fraud detection objective.
+<p>Based on the model comparison table above, LightGBM is selected as the final model due to its superior precision–recall trade-off and highest F1 Score. Both LightGBM and Random Forest demonstrate an excellent performance, with LightGBM achieving the highest F1 Score and PR-AUC, while Random Forest obtains the best ROC-AUC. This indicates that both models are highly effective, but they optimize different aspects of the fraud detection objective.
 
-<p>The LightGBM model provides the strongest overall balance between precision and recall, achieving the best F1 Score and PR-AUC, which are particularly relevant under extreme class imbalance. This suggests that LightGBM offers the most effective trade-off between correctly identifying fraudulent transactions and limiting false positives, particularly at higher decision thresholds where maintaining strong recall becomes more challenging. LightGBM also achieves the lowest LogLoss, indicating that its predicted probabilities are well aligned with the observed outcomes, although this is secondary to recall performance in the fraud detection context.
-<br/></p>
+The LightGBM model provides the strongest overall balance between precision and recall, achieving the best F1 Score and PR-AUC, which are particularly relevant under extreme class imbalance. This suggests that LightGBM offers the most effective trade-off between correctly identifying fraudulent transactions and limiting false positives, particularly at higher decision thresholds where maintaining strong recall becomes more challenging. LightGBM also achieves the lowest LogLoss, indicating that its predicted probabilities are well aligned with the observed outcomes, although this is secondary to recall performance in the fraud detection context.</p>
+<br/>
 </div>
 </div>
 </div>
@@ -9642,11 +9642,11 @@ Based on the model comparison table above, LightGBM is selected as the final mod
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <br/>
-The Random Forest model closely follows LightGBM, showing excellent performance across all metrics and even outperforming it in ROC-AUC. This indicates strong ranking capability and similar sensitivity to fraudulent transactions, but with less optimal precision–recall balance.
+<p>The Random Forest model closely follows LightGBM, showing excellent performance across all metrics and even outperforming it in ROC-AUC. This indicates strong ranking capability and similar sensitivity to fraudulent transactions, but with less optimal precision–recall balance.
 
-<p>XGBoost also performs well, maintaining competitive with the best recall and ROC_AUC, but with a significant lower precision–recall balance compared to the two leading models. Logistic Regression shows the weakest performance, reinforcing that linear decision boundaries are insufficient to capture the nonlinear structure and complexity of fraud patterns in this dataset.</p>
-<p>Overall, tree-based ensemble methods clearly outperform Logistic Regression, highlighting the importance of nonlinear modeling and feature interaction capture in fraud detection tasks.
-<br/></p>
+XGBoost also performs well, maintaining competitive with the best recall and ROC_AUC, but with a significant lower precision–recall balance compared to the two leading models. Logistic Regression shows the weakest performance, reinforcing that linear decision boundaries are insufficient to capture the nonlinear structure and complexity of fraud patterns in this dataset.
+Overall, tree-based ensemble methods clearly outperform Logistic Regression, highlighting the importance of nonlinear modeling and feature interaction capture in fraud detection tasks.</p>
+<br/>
 </div>
 </div>
 </div>
@@ -9669,7 +9669,7 @@ The Random Forest model closely follows LightGBM, showing excellent performance 
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <br/>
-While ROC-AUC remains high across all models, PR-AUC provides a more meaningful evaluation under extreme class imbalance (0.17% fraud rate), as it better reflects performance on the minority class. Under this metric, LightGBM shows the best performance, followed by Random Forest.
+<p>While ROC-AUC remains high across all models, PR-AUC provides a more meaningful evaluation under extreme class imbalance (0.17% fraud rate), as it better reflects performance on the minority class. Under this metric, LightGBM shows the best performance, followed by Random Forest.</p>
 <br/>
 </div>
 </div>
@@ -9693,7 +9693,7 @@ While ROC-AUC remains high across all models, PR-AUC provides a more meaningful 
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <br/>
-The calibration curve exhibits some variability due to class imbalance and limited observations within probability bins. While Random Forest provides smoother and well-calibrated probabilities, LightGBM achieves better overall predictive performance, highlighting a trade-off between calibration and classification effectiveness. LightGBM also achieves lower Log Loss, indicating that the model produces well-calibrated probability estimates overall.
+<p>The calibration curve exhibits some variability due to class imbalance and limited observations within probability bins. While Random Forest provides smoother and well-calibrated probabilities, LightGBM achieves better overall predictive performance, highlighting a trade-off between calibration and classification effectiveness. LightGBM also achieves lower Log Loss, indicating that the model produces well-calibrated probability estimates overall.</p>
 <br/>
 </div>
 </div>
@@ -9705,11 +9705,11 @@ The calibration curve exhibits some variability due to class imbalance and limit
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <br/>
-The following plot shows that fraud detection is mainly driven by a small subset of features. Feature V14 has the strongest influence, with lower values significantly increasing the probability of fraud. This is followed by feature V4, where higher values are strongly associated with increased fraud risk, and features V10 and V12, which also reveal that lower values contribute to higher fraud likelihood.
+<p>The following plot shows that fraud detection is mainly driven by a small subset of features. Feature V14 has the strongest influence, with lower values significantly increasing the probability of fraud. This is followed by feature V4, where higher values are strongly associated with increased fraud risk, and features V10 and V12, which also reveal that lower values contribute to higher fraud likelihood.
 
-<p>The transaction amount has a relatively limited impact, with only a small number of high-value observations contributing to an increased probability of fraud. This indicates that fraud in this dataset is not strongly dependent on transaction size.</p>
-<p>Overall, the model captures fraud patterns through a combination of directional effects and nonlinear relationships across a small number of influential features.
-<br/></p>
+The transaction amount has a relatively limited impact, with only a small number of high-value observations contributing to an increased probability of fraud. This indicates that fraud in this dataset is not strongly dependent on transaction size.
+Overall, the model captures fraud patterns through a combination of directional effects and nonlinear relationships across a small number of influential features.</p>
+<br/>
 </div>
 </div>
 </div>
