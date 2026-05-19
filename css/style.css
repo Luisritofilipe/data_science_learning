@@ -12,9 +12,11 @@ li {
 a:link {
     text-decoration: none;
     width: fit-content;
+    display: inline;
 }
 
 a:visited {
     text-decoration: none;
     width: fit-content;
+    display: inline;
 }
