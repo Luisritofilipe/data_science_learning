@@ -7,18 +7,18 @@ body {
 }
 li {
     list-style-type: none;
-    display: inline-block;
+    display: inline;
 }
 a:link {
     text-decoration: none;
     width: fit-content;
-    display: inline-block;
+    display: inline;
 
 }
 
 a:visited {
     text-decoration: none;
     width: fit-content;
-    display: inline-block;
+    display: inline;
 
 }
