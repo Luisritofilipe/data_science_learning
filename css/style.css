@@ -8,12 +8,7 @@ body {
 li {
     list-style-type: none;
 }
-a:link {
+a {
     text-decoration: none;
-    width: fit-content;
-}
-
-a:visited {
-    text-decoration: none;
-    width: fit-content;
+    color: inherit;
 }
