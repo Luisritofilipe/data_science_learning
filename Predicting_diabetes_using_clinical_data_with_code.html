@@ -8106,7 +8106,7 @@ memory usage: 83.3 KB
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <br/>
-In the following table, features identified with "True" include rows with missing values ("BP(Diastolic)" and "SkinThickness(mm)").
+<p>In the following table, features identified with "True" include rows with missing values ("BP(Diastolic)" and "SkinThickness(mm)").</p>
 <br/>
 </div>
 </div>
@@ -8155,11 +8155,11 @@ dtype: bool</pre>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <br/>
-The dataset summary statistics was used to define binning intervals for imputing missing values with more realistic estimates. This ensures that the imputation process is based on valid observations and helps preserve the underlying distribution of each feature.
+<p>The dataset summary statistics was used to define binning intervals for imputing missing values with more realistic estimates. This ensures that the imputation process is based on valid observations and helps preserve the underlying distribution of each feature.
 
-<p>Auxiliary features were created to discretize the Age and BMI variables. The binning intervals were defined approximately based on the quartiles observed in the summary statistics. The dataset was then grouped using these auxiliary features to form smaller, more homogeneous subsets. Within each group, missing values were imputed using the median of the corresponding group.</p>
-<p>To enhance robustness, a second imputation step was applied using a broader grouping strategy based on a single auxiliary feature, allowing any remaining missing values to be filled using less granular group-level statistics. As a final safeguard, residual missing values were replaced with the overall median of the corresponding feature. This hierarchical imputation approach ensures that missing values are filled using the most contextually relevant information available, while guaranteeing that no missing values remain in the dataset.
-<br/></p>
+Auxiliary features were created to discretize the Age and BMI variables. The binning intervals were defined approximately based on the quartiles observed in the summary statistics. The dataset was then grouped using these auxiliary features to form smaller, more homogeneous subsets. Within each group, missing values were imputed using the median of the corresponding group.
+To enhance robustness, a second imputation step was applied using a broader grouping strategy based on a single auxiliary feature, allowing any remaining missing values to be filled using less granular group-level statistics. As a final safeguard, residual missing values were replaced with the overall median of the corresponding feature. This hierarchical imputation approach ensures that missing values are filled using the most contextually relevant information available, while guaranteeing that no missing values remain in the dataset.</p>
+<br/>
 </div>
 </div>
 </div>
@@ -8203,11 +8203,11 @@ The dataset summary statistics was used to define binning intervals for imputing
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h1 id="Exploratory-Data-Analysis-and-Feature-Evaluation">Exploratory Data Analysis and Feature Evaluation<a class="anchor-link" href="#Exploratory-Data-Analysis-and-Feature-Evaluation">¶</a></h1><br/>
-Additional features were engineered to capture non-linear relationships and enhance the predictive power of the models. These features were designed to reflect meaningful interactions between clinical variables.
+<p>Additional features were engineered to capture non-linear relationships and enhance the predictive power of the models. These features were designed to reflect meaningful interactions between clinical variables.
 
-<p>The BMI_Glucose feature combines body mass index (BMI) with glucose levels, capturing the interaction between metabolic load and glycemic state. The Age_BMI feature incorporates the relationship between Age and BMI, representing the cumulative effect of metabolic risk over time. Finally, the High_Glucose feature encodes elevated glucose levels using a nonlinear transformation above a threshold of 140, emphasizing the increased risk associated with higher glucose concentrations.</p>
-<p>These engineered features aim to provide models with more informative signals than the original variables alone, particularly in capturing interactions and nonlinear effects. BMI and auxiliary features were removed due to feature redundancy and noise. Type 2 Diabetic feature was renamed as Class.
-<br/></p>
+The BMI_Glucose feature combines body mass index (BMI) with glucose levels, capturing the interaction between metabolic load and glycemic state. The Age_BMI feature incorporates the relationship between Age and BMI, representing the cumulative effect of metabolic risk over time. Finally, the High_Glucose feature encodes elevated glucose levels using a nonlinear transformation above a threshold of 140, emphasizing the increased risk associated with higher glucose concentrations.
+These engineered features aim to provide models with more informative signals than the original variables alone, particularly in capturing interactions and nonlinear effects. BMI and auxiliary features were removed due to feature redundancy and noise. Type 2 Diabetic feature was renamed as Class.</p>
+<br/>
 </div>
 </div>
 </div>
@@ -8406,11 +8406,11 @@ Additional features were engineered to capture non-linear relationships and enha
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <br/>
-The dataset exhibits a notable class imbalance, with 78.9% of observations corresponding to positive diabetes diagnoses. Feature correlation analysis was conducted to identify highly correlated pairs of independent variables, enabling the removal of redundant features and improving model robustness.
+<p>The dataset exhibits a notable class imbalance, with 78.9% of observations corresponding to positive diabetes diagnoses. Feature correlation analysis was conducted to identify highly correlated pairs of independent variables, enabling the removal of redundant features and improving model robustness.
 
-<p>A correlation threshold of 0.95 was defined, such that if two independent variables exhibited a correlation equal to or greater than this value, one of them would be removed. This approach helps mitigate multicollinearity and reduces the risk of overfitting, particularly in linear models.</p>
-<p>In this dataset, including the engineered features, no pairs of independent variables were found to exceed the defined correlation threshold, as illustrated in the correlation matrix. This indicates that the feature set does not exhibit significant redundancy and can be retained without further dimensionality reduction.
-<br/></p>
+A correlation threshold of 0.95 was defined, such that if two independent variables exhibited a correlation equal to or greater than this value, one of them would be removed. This approach helps mitigate multicollinearity and reduces the risk of overfitting, particularly in linear models.
+In this dataset, including the engineered features, no pairs of independent variables were found to exceed the defined correlation threshold, as illustrated in the correlation matrix. This indicates that the feature set does not exhibit significant redundancy and can be retained without further dimensionality reduction.</p>
+<br/>
 </div>
 </div>
 </div>
@@ -8482,10 +8482,10 @@ The dataset exhibits a notable class imbalance, with 78.9% of observations corre
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <br/>
-The following chart illustrates the correlation between the target variable Class and the independent features. The results indicate that Glucose, BMI_Glucose and High_Glucose exhibit the strongest positive correlations with the target variable, suggesting that higher values of these features are associated with an increased likelihood of belonging to the positive class.
+<p>The following chart illustrates the correlation between the target variable Class and the independent features. The results indicate that Glucose, BMI_Glucose and High_Glucose exhibit the strongest positive correlations with the target variable, suggesting that higher values of these features are associated with an increased likelihood of belonging to the positive class.
 
-<p>It is important to note that correlation measures linear relationships only and does not capture potential nonlinear interactions between variables. Therefore, features with low correlation may still contribute to model performance when combined with other variables or when nonlinear effects are considered.
-<br/></p>
+It is important to note that correlation measures linear relationships only and does not capture potential nonlinear interactions between variables. Therefore, features with low correlation may still contribute to model performance when combined with other variables or when nonlinear effects are considered.</p>
+<br/>
 </div>
 </div>
 </div>
@@ -8584,7 +8584,7 @@ The following chart illustrates the correlation between the target variable Clas
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <br/>
-The boxplot analysis reveals that Glucose, BMI_Glucose, High_Glucose, and Insulin display greater variability in Class 1, reduced interquartile overlap between classes, and distinct median shifts. These characteristics indicate strong discriminative power and suggest that these features contribute significantly to class separability.
+<p>The boxplot analysis reveals that Glucose, BMI_Glucose, High_Glucose, and Insulin display greater variability in Class 1, reduced interquartile overlap between classes, and distinct median shifts. These characteristics indicate strong discriminative power and suggest that these features contribute significantly to class separability.</p>
 <br/>
 </div>
 </div>
@@ -8645,8 +8645,8 @@ The boxplot analysis reveals that Glucose, BMI_Glucose, High_Glucose, and Insuli
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h1>Model Training</h1>
-<p>In the next step, the dataset is split into training and testing sets to allow proper training of the classification models and unbiased evaluation of their performance.
-<br/></p>
+<p>In the next step, the dataset is split into training and testing sets to allow proper training of the classification models and unbiased evaluation of their performance.</p>
+<br/>
 </div>
 </div>
 </div>
@@ -8693,8 +8693,8 @@ X_test.shape= (352, 11) Y_test.shape= (352,)
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2>Logistic Regression</h2>
 <p>Logistic Regression is a supervised machine learning algorithm used for classification tasks, particularly binary classification problems where the target variable takes values such as 0/1, true/false, or yes/no. In this study, it is applied to predict the Class variable, representing the presence or absence of diabetes in a patient. Despite its simplicity, Logistic Regression can perform well in high-dimensional datasets and provide a strong baseline for comparison with more complex models. Given the large number of observations relative to the number of features in this dataset, the model is less likely to overfit, although regularization and class imbalance handling remain important considerations.
-The coefficients of the Logistic Regression model provide insight into the direction and relative importance of each feature. Positive values indicate an increase in the likelihood of a patient having diabetes, while negative values indicate the opposite. The magnitude of the coefficients reflects the strength of the relationship.
-<br/></p>
+The coefficients of the Logistic Regression model provide insight into the direction and relative importance of each feature. Positive values indicate an increase in the likelihood of a patient having diabetes, while negative values indicate the opposite. The magnitude of the coefficients reflects the strength of the relationship.</p>
+<br/>
 </div>
 </div>
 </div>
@@ -8899,10 +8899,10 @@ The coefficients of the Logistic Regression model provide insight into the direc
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <br/>
-The following table presents the computed feature coefficients from the Logistic Regression model, ordered from highest to lowest. The results indicate that High_Glucose exhibits a noticeable negative coefficient, suggesting an inverse relationship with the probability of a patient being classified as diabetic when controlling for other variables in the model.
+<p>The following table presents the computed feature coefficients from the Logistic Regression model, ordered from highest to lowest. The results indicate that High_Glucose exhibits a noticeable negative coefficient, suggesting an inverse relationship with the probability of a patient being classified as diabetic when controlling for other variables in the model.
 
-<p>This behavior may be explained by redundancy with other glucose-related features or by interactions captured through engineered variables. In the presence of correlated predictors, coefficient signs can reflect conditional relationships rather than direct effects, highlighting the influence of multicollinearity and feature interactions on model interpretation.
-<br/></p>
+This behavior may be explained by redundancy with other glucose-related features or by interactions captured through engineered variables. In the presence of correlated predictors, coefficient signs can reflect conditional relationships rather than direct effects, highlighting the influence of multicollinearity and feature interactions on model interpretation.</p>
+<br/>
 </div>
 </div>
 </div>
@@ -9002,7 +9002,7 @@ The following table presents the computed feature coefficients from the Logistic
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <br/>
-A confusion matrix is shown below for a minimum probability equal to the threshold corresponding to the maximum RecallScore for a constraint of PrecisionScore and RecallScore equal or higher than 0.8.
+<p>A confusion matrix is shown below for a minimum probability equal to the threshold corresponding to the maximum RecallScore for a constraint of PrecisionScore and RecallScore equal or higher than 0.8.</p>
 <br/>
 </div>
 </div>
@@ -9041,8 +9041,8 @@ A confusion matrix is shown below for a minimum probability equal to the thresho
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2>Random Forest</h2>
-<p>Random Forest is often expected to outperform Logistic Regression in classification tasks, as it can capture nonlinear patterns, interactions between features, and is generally more robust regarding noise. The Random Forest hyperparameter search was optimized to reduce computational cost/time by limiting tree complexity and reducing cross-validation folds, while preserving model comparability across experiments.
-<br/></p>
+<p>Random Forest is often expected to outperform Logistic Regression in classification tasks, as it can capture nonlinear patterns, interactions between features, and is generally more robust regarding noise. The Random Forest hyperparameter search was optimized to reduce computational cost/time by limiting tree complexity and reducing cross-validation folds, while preserving model comparability across experiments.</p>
+<br/>
 </div>
 </div>
 </div>
@@ -9246,7 +9246,7 @@ A confusion matrix is shown below for a minimum probability equal to the thresho
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <br/>
-The following table shows the computed feature importance ordered from highest to lowest.
+<p>The following table shows the computed feature importance ordered from highest to lowest.</p>
 <br/>
 </div>
 </div>
@@ -9347,10 +9347,10 @@ The following table shows the computed feature importance ordered from highest t
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <br/>
-The Random Forest model attributed higher importance to engineered features such as BMI_Glucose and Age_BMI. This indicates that these variables provide strong predictive signal and contribute significantly to the model’s ability to capture nonlinear relationships and separate the two classes. The results suggest that feature engineering enhances the model’s performance by combining clinically relevant variables into more informative representations than the original features alone.
+<p>The Random Forest model attributed higher importance to engineered features such as BMI_Glucose and Age_BMI. This indicates that these variables provide strong predictive signal and contribute significantly to the model’s ability to capture nonlinear relationships and separate the two classes. The results suggest that feature engineering enhances the model’s performance by combining clinically relevant variables into more informative representations than the original features alone.
 
-<p>A confusion matrix is shown below for a minimum probability equal to the threshold corresponding to the maximum RecallScore for a constraint of PrecisionScore and RecallScore equal or higher than 0.8.
-<br/></p>
+A confusion matrix is shown below for a minimum probability equal to the threshold corresponding to the maximum RecallScore for a constraint of PrecisionScore and RecallScore equal or higher than 0.8.</p>
+<br/>
 </div>
 </div>
 </div>
@@ -9388,8 +9388,8 @@ The Random Forest model attributed higher importance to engineered features such
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2>XGBoost</h2>
-<p>Reducing the subsample and colsample_bytree (min ≥ 0.7) from default values (1.0) introduces randomness, reduces overfitting, improves generalization, forces feature diversity and reduces dominance of strong features. Shares some similarities with Random Forest. But while the later builds trees during training and outputs the average of the predictions from individual trees, XGBoost builds new trees sequentially and each new tree corrects errors from the previous tree, improving model's predictions.
-<br/></p>
+<p>Reducing the subsample and colsample_bytree (min ≥ 0.7) from default values (1.0) introduces randomness, reduces overfitting, improves generalization, forces feature diversity and reduces dominance of strong features. Shares some similarities with Random Forest. But while the later builds trees during training and outputs the average of the predictions from individual trees, XGBoost builds new trees sequentially and each new tree corrects errors from the previous tree, improving model's predictions.</p>
+<br/>
 </div>
 </div>
 </div>
@@ -9597,7 +9597,7 @@ The Random Forest model attributed higher importance to engineered features such
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <br/>
-The following table shows the computed feature importance from highest to lowest.
+<p>The following table shows the computed feature importance from highest to lowest.</p>
 <br/>
 </div>
 </div>
@@ -9698,11 +9698,11 @@ The following table shows the computed feature importance from highest to lowest
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <br/>
-Engineered features are ranked among the most important variables overall, indicating that they contribute with strong predictive signal to the model. 
+<p>Engineered features are ranked among the most important variables overall, indicating that they contribute with strong predictive signal to the model. 
 This suggests that combining clinical variables into interaction-based features improves the model's ability to capture nonlinear relationships and separate classes more effectively than using the original features alone.
 
-<p>A confusion matrix is shown below for a minimum probability equal to the threshold corresponding to the maximum RecallScore for a constraint of PrecisionScore and RecallScore equal or higher than 0.8.
-<br/></p>
+A confusion matrix is shown below for a minimum probability equal to the threshold corresponding to the maximum RecallScore for a constraint of PrecisionScore and RecallScore equal or higher than 0.8.</p>
+<br/>
 </div>
 </div>
 </div>
@@ -9740,8 +9740,8 @@ This suggests that combining clinical variables into interaction-based features 
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2>LightGBM</h2>
-<p>LightGBM is a high-performance gradient boosting framework built on decision tree algorithms. It is widely used for ranking, classification, and many other machine learning tasks. Works particularly well with large datasets and a large number of independent variables, optimizing heavily for speed and memory efficiency. LightGBM grows trees leaf-wise, evaluates all leaves and expands the single leaf that reduces the loss the most. It uses histogram-based algorithms to group continuous feature values into discrete bins. This drastically reduces memory usage and speeds up training. It can handle categorical features directly without requiring to manually apply encoding first. Because leaf-wise growth is quite aggressive, LightGBM can easily overfit, especially on smaller datasets. To prevent this, careful tuning of hyperparameters like max_depth, num_leaves, and min_data_in_leaf is strictly required.
-<br/></p>
+<p>LightGBM is a high-performance gradient boosting framework built on decision tree algorithms. It is widely used for ranking, classification, and many other machine learning tasks. Works particularly well with large datasets and a large number of independent variables, optimizing heavily for speed and memory efficiency. LightGBM grows trees leaf-wise, evaluates all leaves and expands the single leaf that reduces the loss the most. It uses histogram-based algorithms to group continuous feature values into discrete bins. This drastically reduces memory usage and speeds up training. It can handle categorical features directly without requiring to manually apply encoding first. Because leaf-wise growth is quite aggressive, LightGBM can easily overfit, especially on smaller datasets. To prevent this, careful tuning of hyperparameters like max_depth, num_leaves, and min_data_in_leaf is strictly required.</p>
+<br/>
 </div>
 </div>
 </div>
@@ -9948,7 +9948,7 @@ This suggests that combining clinical variables into interaction-based features 
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <br/>
-The following table shows the computed feature importance from highest to lowest.
+<p>The following table shows the computed feature importance from highest to lowest.</p>
 <br/>
 </div>
 </div>
@@ -10049,10 +10049,10 @@ The following table shows the computed feature importance from highest to lowest
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <br/>
-High_Glucose is ranked as the least important feature. This suggests that, in this model, the information captured by High_Glucose may already be represented by other correlated or engineered features, reducing its incremental predictive contribution.
+<p>High_Glucose is ranked as the least important feature. This suggests that, in this model, the information captured by High_Glucose may already be represented by other correlated or engineered features, reducing its incremental predictive contribution.
 
-<p>A confusion matrix is shown below for a minimum probability equal to the threshold corresponding to the maximum RecallScore for a constraint of PrecisionScore and RecallScore equal or higher than 0.8.
-<br/></p>
+A confusion matrix is shown below for a minimum probability equal to the threshold corresponding to the maximum RecallScore for a constraint of PrecisionScore and RecallScore equal or higher than 0.8.</p>
+<br/>
 </div>
 </div>
 </div>
@@ -10090,9 +10090,9 @@ High_Glucose is ranked as the least important feature. This suggests that, in th
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2>CatBoost</h2>
-<p>CatBoost is a high-performance gradient boosting framework built on decision tree algorithms. It is widely used for classification, regression, and ranking tasks, particularly on tabular data. CatBoost introduces ordered boosting, a technique designed to reduce overfitting by preventing information leakage during training. It also uses symmetric trees, where the same splitting condition is applied across each level, improving prediction speed and model stability. One of its main advantages is the ability to handle categorical features directly without requiring extensive preprocessing. CatBoost is generally robust to hyperparameter choices and requires less tuning compared to other gradient boosting frameworks. However, it can be slower to train than LightGBM, especially on very large datasets.</p>
-<p>Although CatBoost provides a large number of configurable hyperparameters, it typically requires less manual tuning than frameworks such as LightGBM or XGBoost, due to its robust default settings and built-in mechanisms for handling categorical features and reducing overfitting.
-<br/></p>
+<p>CatBoost is a high-performance gradient boosting framework built on decision tree algorithms. It is widely used for classification, regression, and ranking tasks, particularly on tabular data. CatBoost introduces ordered boosting, a technique designed to reduce overfitting by preventing information leakage during training. It also uses symmetric trees, where the same splitting condition is applied across each level, improving prediction speed and model stability. One of its main advantages is the ability to handle categorical features directly without requiring extensive preprocessing. CatBoost is generally robust to hyperparameter choices and requires less tuning compared to other gradient boosting frameworks. However, it can be slower to train than LightGBM, especially on very large datasets.
+Although CatBoost provides a large number of configurable hyperparameters, it typically requires less manual tuning than frameworks such as LightGBM or XGBoost, due to its robust default settings and built-in mechanisms for handling categorical features and reducing overfitting.</p>
+<br/>
 </div>
 </div>
 </div>
@@ -10297,7 +10297,7 @@ High_Glucose is ranked as the least important feature. This suggests that, in th
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <br/>
-The following table shows the computed feature importance from highest to lowest.
+<p>The following table shows the computed feature importance from highest to lowest.</p>
 <br/>
 </div>
 </div>
@@ -10398,10 +10398,10 @@ The following table shows the computed feature importance from highest to lowest
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <br/>
-With exception of High_Glucose, which receives higher importance, CatBoost assigns lower importance to engineered features. This suggests that the predictive information captured by these feature may be partially redundant with other glucose-related variables.
+<p>With exception of High_Glucose, which receives higher importance, CatBoost assigns lower importance to engineered features. This suggests that the predictive information captured by these feature may be partially redundant with other glucose-related variables.
 
-<p>A confusion matrix is shown below for a minimum probability equal to the threshold corresponding to the maximum RecallScore for a constraint of PrecisionScore and RecallScore equal or higher than 0.8.
-<br/></p>
+A confusion matrix is shown below for a minimum probability equal to the threshold corresponding to the maximum RecallScore for a constraint of PrecisionScore and RecallScore equal or higher than 0.8.</p>
+<br/>
 </div>
 </div>
 </div>
@@ -10439,8 +10439,8 @@ With exception of High_Glucose, which receives higher importance, CatBoost assig
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2>Support Vector Machines (SVM)</h2>
-<p>Support Vector Machine (SVM) is a supervised machine learning algorithm used for classification and regression tasks, particularly effective in high-dimensional spaces. It works by finding the optimal hyperplane that best separates classes by maximizing the margin between them. The margin is defined as the distance between the hyperplane and the closest data points from each class, known as support vectors. SVM can model both linear and nonlinear decision boundaries through the use of kernel functions such as linear, radial basis function (RBF), and polynomial kernels. The kernel trick allows SVM to implicitly transform the input space into higher dimensions, enabling the separation of complex patterns. SVM is particularly sensitive to feature scaling, making standardization an important preprocessing step. It is also computationally intensive on large datasets, especially when using nonlinear kernels, and requires careful tuning of hyperparameters such as C and gamma to balance margin maximization and classification error.
-<br/></p>
+<p>Support Vector Machine (SVM) is a supervised machine learning algorithm used for classification and regression tasks, particularly effective in high-dimensional spaces. It works by finding the optimal hyperplane that best separates classes by maximizing the margin between them. The margin is defined as the distance between the hyperplane and the closest data points from each class, known as support vectors. SVM can model both linear and nonlinear decision boundaries through the use of kernel functions such as linear, radial basis function (RBF), and polynomial kernels. The kernel trick allows SVM to implicitly transform the input space into higher dimensions, enabling the separation of complex patterns. SVM is particularly sensitive to feature scaling, making standardization an important preprocessing step. It is also computationally intensive on large datasets, especially when using nonlinear kernels, and requires careful tuning of hyperparameters such as C and gamma to balance margin maximization and classification error.</p>
+<br/>
 </div>
 </div>
 </div>
@@ -10745,10 +10745,10 @@ With exception of High_Glucose, which receives higher importance, CatBoost assig
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <br/>
-Support Vector Machines (SVM) do not provide feature coefficients or feature importance in the same way as linear models or tree-based methods because their learning mechanism is fundamentally different. When using nonlinear kernels (such as RBF), the decision boundary is implicitly mapped into a higher-dimensional space, making it impossible to express feature contributions in a direct, interpretable coefficient form. As a result, SVM provides strong predictive performance but limited inherent interpretability in terms of feature importance.
+<p>Support Vector Machines (SVM) do not provide feature coefficients or feature importance in the same way as linear models or tree-based methods because their learning mechanism is fundamentally different. When using nonlinear kernels (such as RBF), the decision boundary is implicitly mapped into a higher-dimensional space, making it impossible to express feature contributions in a direct, interpretable coefficient form. As a result, SVM provides strong predictive performance but limited inherent interpretability in terms of feature importance.
 
-<p>A confusion matrix is shown below for a minimum probability equal to the threshold corresponding to the maximum RecallScore for a constraint of PrecisionScore and RecallScore equal or higher than 0.8.
-<br/></p>
+A confusion matrix is shown below for a minimum probability equal to the threshold corresponding to the maximum RecallScore for a constraint of PrecisionScore and RecallScore equal or higher than 0.8.</p>
+<br/>
 </div>
 </div>
 </div>
@@ -10786,8 +10786,8 @@ Support Vector Machines (SVM) do not provide feature coefficients or feature imp
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2>K-Nearest Neighbors (KNN)</h2>
-<p>K-Nearest Neighbors (KNN) is a supervised machine learning algorithm used for classification and regression tasks, based on instance-based or “lazy learning” principles. Unlike parametric models, KNN does not build an explicit model during training; instead, it stores the training data and makes predictions by identifying the k closest data points to a given observation. The class of a new sample is determined by majority voting among its nearest neighbors, typically using distance metrics such as Euclidean or Manhattan distance. Because KNN relies heavily on distance calculations, feature scaling is essential to ensure that all variables contribute equally to the similarity measure. KNN is simple and intuitive but can become computationally expensive at prediction time, especially with large datasets. Its performance is highly sensitive to the choice of k and the distance metric, and it can be affected by noise and irrelevant features.
-<br/></p>
+<p>K-Nearest Neighbors (KNN) is a supervised machine learning algorithm used for classification and regression tasks, based on instance-based or “lazy learning” principles. Unlike parametric models, KNN does not build an explicit model during training; instead, it stores the training data and makes predictions by identifying the k closest data points to a given observation. The class of a new sample is determined by majority voting among its nearest neighbors, typically using distance metrics such as Euclidean or Manhattan distance. Because KNN relies heavily on distance calculations, feature scaling is essential to ensure that all variables contribute equally to the similarity measure. KNN is simple and intuitive but can become computationally expensive at prediction time, especially with large datasets. Its performance is highly sensitive to the choice of k and the distance metric, and it can be affected by noise and irrelevant features.</p>
+<br/>
 </div>
 </div>
 </div>
@@ -10985,7 +10985,7 @@ Support Vector Machines (SVM) do not provide feature coefficients or feature imp
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <br/>
-A confusion matrix is shown below for a minimum probability equal to the threshold corresponding to the maximum RecallScore for a constraint of PrecisionScore and RecallScore equal or higher than 0.8.
+<p>A confusion matrix is shown below for a minimum probability equal to the threshold corresponding to the maximum RecallScore for a constraint of PrecisionScore and RecallScore equal or higher than 0.8.</p>
 <br/>
 </div>
 </div>
@@ -11024,8 +11024,8 @@ A confusion matrix is shown below for a minimum probability equal to the thresho
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2>Multilayer Perceptron (MLP)</h2>
-<p>Multilayer Perceptron (MLP) is a supervised machine learning algorithm based on artificial neural networks, commonly used for both classification and regression tasks. It consists of an input layer, one or more hidden layers, and an output layer, where each layer is composed of interconnected neurons that apply weighted transformations followed by nonlinear activation functions. MLP is capable of learning complex nonlinear relationships between features by adjusting weights through backpropagation and gradient-based optimization. This allows the model to capture intricate interactions that may not be easily represented by linear models. The performance of MLP is highly dependent on feature scaling, network architecture, and hyperparameter tuning, such as the number of hidden layers, neurons per layer, activation function, learning rate, and regularization strength. Without proper tuning, MLP can suffer from overfitting or slow convergence, especially on smaller datasets.
-<br/></p>
+<p>Multilayer Perceptron (MLP) is a supervised machine learning algorithm based on artificial neural networks, commonly used for both classification and regression tasks. It consists of an input layer, one or more hidden layers, and an output layer, where each layer is composed of interconnected neurons that apply weighted transformations followed by nonlinear activation functions. MLP is capable of learning complex nonlinear relationships between features by adjusting weights through backpropagation and gradient-based optimization. This allows the model to capture intricate interactions that may not be easily represented by linear models. The performance of MLP is highly dependent on feature scaling, network architecture, and hyperparameter tuning, such as the number of hidden layers, neurons per layer, activation function, learning rate, and regularization strength. Without proper tuning, MLP can suffer from overfitting or slow convergence, especially on smaller datasets.</p>
+<br/>
 </div>
 </div>
 </div>
@@ -11234,7 +11234,7 @@ A confusion matrix is shown below for a minimum probability equal to the thresho
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <br/>
-The following table shows the computed feature importance from highest to lowest.
+<p>The following table shows the computed feature importance from highest to lowest.</p>
 <br/>
 </div>
 </div>
@@ -11335,10 +11335,10 @@ The following table shows the computed feature importance from highest to lowest
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <br/>
-The engineered features appear among the most important variables, suggesting that they provide additional contribution for learning discriminative patterns in this specific model. This may indicate that the information captured by these engineered features is not represented by other variables or is effectively leveraged by the MLP architecture under the current configuration.
+<p>The engineered features appear among the most important variables, suggesting that they provide additional contribution for learning discriminative patterns in this specific model. This may indicate that the information captured by these engineered features is not represented by other variables or is effectively leveraged by the MLP architecture under the current configuration.
 
-<p>A confusion matrix is shown below for a minimum probability equal to the threshold corresponding to the maximum RecallScore for a constraint of PrecisionScore and RecallScore equal or higher than 0.8.
-<br/></p>
+A confusion matrix is shown below for a minimum probability equal to the threshold corresponding to the maximum RecallScore for a constraint of PrecisionScore and RecallScore equal or higher than 0.8.</p>
+<br/>
 </div>
 </div>
 </div>
@@ -11376,9 +11376,9 @@ The engineered features appear among the most important variables, suggesting th
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h1>Model Comparison and Selection</h1>
-<p>The next step is to define the desired model performance objective. In the context of diabetes diagnosis, minimizing false negatives is prioritized, as failing to identify positive cases has higher clinical risk, while a certain level of false positives is acceptable.</p>
-<p>Model selection is therefore performed by first identifying all threshold configurations satisfying the predefined constraints on precision and recall (equal or higher than 0.8). Within this feasible set, the optimal threshold for each model was selected by maximizing the Matthews Correlation Coefficient (MCC), ensuring a balanced trade-off between true positives, true negatives, false positives, and false negatives. This approach guarantees that the selected operating point achieves both the desired sensitivity and an overall balanced classification performance.
-<br/></p>
+<p>The next step is to define the desired model performance objective. In the context of diabetes diagnosis, minimizing false negatives is prioritized, as failing to identify positive cases has higher clinical risk, while a certain level of false positives is acceptable.
+Model selection is therefore performed by first identifying all threshold configurations satisfying the predefined constraints on precision and recall (equal or higher than 0.8). Within this feasible set, the optimal threshold for each model was selected by maximizing the Matthews Correlation Coefficient (MCC), ensuring a balanced trade-off between true positives, true negatives, false positives, and false negatives. This approach guarantees that the selected operating point achieves both the desired sensitivity and an overall balanced classification performance.</p>
+<br/>
 </div>
 </div>
 </div>
@@ -11628,11 +11628,11 @@ The engineered features appear among the most important variables, suggesting th
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <br/>
-The model comparison results indicate that several tree-based ensemble methods, including CatBoost, LightGBM, Random Forest, and XGBoost, achieve nearly identical performance under the defined constraints. These models reach perfect recall while maintaining high precision and a low number of false positives, resulting in strong MCC and PR_AUC scores.
+<p>The model comparison results indicate that several tree-based ensemble methods, including CatBoost, LightGBM, Random Forest, and XGBoost, achieve nearly identical performance under the defined constraints. These models reach perfect recall while maintaining high precision and a low number of false positives, resulting in strong MCC and PR_AUC scores.
 
-<p>This convergence in performance suggests that the dataset is highly separable given the selected and engineered features, and that model performance is largely driven by threshold selection rather than algorithmic differences. Among the top-performing models, CatBoost shows a slight advantage in probabilistic calibration, as reflected by its lower LogLoss and Brier Score.</p>
-<p>Overall, these results indicate that multiple models are capable of achieving excellent classification performance, with CatBoost providing the most reliable probability estimates among them.
-<br/></p>
+This convergence in performance suggests that the dataset is highly separable given the selected and engineered features, and that model performance is largely driven by threshold selection rather than algorithmic differences. Among the top-performing models, CatBoost shows a slight advantage in probabilistic calibration, as reflected by its lower LogLoss and Brier Score.
+Overall, these results indicate that multiple models are capable of achieving excellent classification performance, with CatBoost providing the most reliable probability estimates among them.</p>
+<br/>
 </div>
 </div>
 </div>
@@ -11744,7 +11744,7 @@ The model comparison results indicate that several tree-based ensemble methods, 
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <br/>
-The Precision-Recall curves exhibit a near-rectangular shape, indicating that precision remains consistently high across a wide range of recall values. This suggests that the models achieve strong class separability, with positive cases being reliably assigned higher probabilities than negative ones. As a result, model performance is relatively insensitive to the choice of classification threshold, reflecting a high level of discriminative power.
+<p>The Precision-Recall curves exhibit a near-rectangular shape, indicating that precision remains consistently high across a wide range of recall values. This suggests that the models achieve strong class separability, with positive cases being reliably assigned higher probabilities than negative ones. As a result, model performance is relatively insensitive to the choice of classification threshold, reflecting a high level of discriminative power.</p>
 <br/>
 </div>
 </div>
@@ -11810,11 +11810,11 @@ The Precision-Recall curves exhibit a near-rectangular shape, indicating that pr
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <br/>
-In the score distribution plots, the horizontal axis represents the predicted probability of belonging to the positive class. A model with strong discriminative ability assigns low probabilities to negative cases (concentrated near 0) and high probabilities to positive cases (concentrated near 1).
+<p>In the score distribution plots, the horizontal axis represents the predicted probability of belonging to the positive class. A model with strong discriminative ability assigns low probabilities to negative cases (concentrated near 0) and high probabilities to positive cases (concentrated near 1).
 
-<p>The overlap between the two distributions corresponds to regions where both classes receive similar predicted probabilities, leading to potential misclassifications. This overlap is not limited to the intersection point of the curves but represents the entire shared area where both class densities are non-zero.</p>
-<p>The score distribution plots below show a near-complete separation between classes, with predicted probabilities for positive cases concentrated close to 1 and negative cases clustered at lower values. The minimal overlap between the two distributions indicates strong discriminative performance across all models. This suggests that the selected features provide highly informative signals, enabling the models to distinguish effectively between classes. However, such high separability also warrants careful validation to rule out potential overfitting or data leakage.
-<br/></p>
+The overlap between the two distributions corresponds to regions where both classes receive similar predicted probabilities, leading to potential misclassifications. This overlap is not limited to the intersection point of the curves but represents the entire shared area where both class densities are non-zero.
+The score distribution plots below show a near-complete separation between classes, with predicted probabilities for positive cases concentrated close to 1 and negative cases clustered at lower values. The minimal overlap between the two distributions indicates strong discriminative performance across all models. This suggests that the selected features provide highly informative signals, enabling the models to distinguish effectively between classes. However, such high separability also warrants careful validation to rule out potential overfitting or data leakage.</p>
+<br/>
 </div>
 </div>
 </div>
@@ -11897,10 +11897,10 @@ In the score distribution plots, the horizontal axis represents the predicted pr
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <br/>
-The calibration curve exhibits probability quality. CatBoost stands out as the best calibrated model. Its curve is almost on top of the perfectly calibrated reference line, meaning its predicted probabilities are highly reliable. This suggests it likely benefits from its training procedure (ordered boosting + regularization) producing naturally better probability estimates.
+<p>The calibration curve exhibits probability quality. CatBoost stands out as the best calibrated model. Its curve is almost on top of the perfectly calibrated reference line, meaning its predicted probabilities are highly reliable. This suggests it likely benefits from its training procedure (ordered boosting + regularization) producing naturally better probability estimates.
 
-<p>Random Forest, XGBoost and LightGBM tend to be underconfident in mid-to-high probability ranges, as revealed by curves above the reference line.
-<br/></p>
+Random Forest, XGBoost and LightGBM tend to be underconfident in mid-to-high probability ranges, as revealed by curves above the reference line.</p>
+<br/>
 </div>
 </div>
 </div>
@@ -11977,11 +11977,11 @@ The calibration curve exhibits probability quality. CatBoost stands out as the b
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <br/>
-The SHAP summary plot indicates that diabetes prediction is primarily driven by a subset of features, with Glucose exhibiting the strongest overall impact on the model’s output. Higher glucose values consistently increase the predicted probability of diabetes, while lower values are associated with a sharp decrease in predicted risk.
+<p>The SHAP summary plot indicates that diabetes prediction is primarily driven by a subset of features, with Glucose exhibiting the strongest overall impact on the model’s output. Higher glucose values consistently increase the predicted probability of diabetes, while lower values are associated with a sharp decrease in predicted risk.
 
-<p>Other influential variables include BMI_Glucose, High_Glucose, Age_BMI, and BP (Systolic). For these features, higher values generally contribute positively to the predicted probability of diabetes, whereas lower values tend to reduce the predicted risk.</p>
-<p>Interestingly, variables such as Age and Pregnancies display more complex and, in some cases, inverse relationships, where higher values may be associated with a lower predicted probability of diabetes within the learned model structure. This suggests that their effects are likely context-dependent and influenced by interactions with other features, rather than exhibiting a simple monotonic relationship with the target variable.
-<br/></p>
+Other influential variables include BMI_Glucose, High_Glucose, Age_BMI, and BP (Systolic). For these features, higher values generally contribute positively to the predicted probability of diabetes, whereas lower values tend to reduce the predicted risk.
+Interestingly, variables such as Age and Pregnancies display more complex and, in some cases, inverse relationships, where higher values may be associated with a lower predicted probability of diabetes within the learned model structure. This suggests that their effects are likely context-dependent and influenced by interactions with other features, rather than exhibiting a simple monotonic relationship with the target variable.</p>
+<br/>
 </div>
 </div>
 </div>
@@ -12035,11 +12035,11 @@ The SHAP summary plot indicates that diabetes prediction is primarily driven by 
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <br/>
-The SHAP dependence plot illustrates how the contribution of the feature Glucose to the model output varies across its value range, with observations colored by SkinThickness, the feature exhibiting the strongest interaction with Glucose.
+<p>The SHAP dependence plot illustrates how the contribution of the feature Glucose to the model output varies across its value range, with observations colored by SkinThickness, the feature exhibiting the strongest interaction with Glucose.
 
-<p>The plot suggests a clear interaction pattern between these variables. For lower values of SkinThickness (blue points), Glucose tends to produce more neutral or negative SHAP contributions, particularly at lower glucose levels. In contrast, higher values of SkinThickness (red points) are more frequently associated with positive SHAP contributions from Glucose, especially when Glucose exceeds approximately 100.</p>
-<p>This pattern indicates that the effect of Glucose on the predicted probability of diabetes is conditional on SkinThickness. In other words, the same glucose value may contribute differently to the model output depending on the level of SkinThickness, highlighting a meaningful interaction captured by the model.
-<br/></p>
+The plot suggests a clear interaction pattern between these variables. For lower values of SkinThickness (blue points), Glucose tends to produce more neutral or negative SHAP contributions, particularly at lower glucose levels. In contrast, higher values of SkinThickness (red points) are more frequently associated with positive SHAP contributions from Glucose, especially when Glucose exceeds approximately 100.
+This pattern indicates that the effect of Glucose on the predicted probability of diabetes is conditional on SkinThickness. In other words, the same glucose value may contribute differently to the model output depending on the level of SkinThickness, highlighting a meaningful interaction captured by the model.</p>
+<br/>
 </div>
 </div>
 </div>
@@ -12077,9 +12077,9 @@ The SHAP dependence plot illustrates how the contribution of the feature Glucose
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h1>Final Evaluation and Conclusion</h1>
-<p>The dataset contains features that reliably capture patient conditions and provide strong signals for class separation. The inclusion of engineered features did not significantly improve the models’ ability to detect positive cases or reduce false negatives, suggesting that the original feature set already contains sufficient predictive information.</p>
-<p>Overall, the results indicate that model performance is largely driven by a small number of highly informative features, particularly Glucose, while other variables provide complementary but less critical contributions.
-<br/></p>
+<p>The dataset contains features that reliably capture patient conditions and provide strong signals for class separation. The inclusion of engineered features did not significantly improve the models’ ability to detect positive cases or reduce false negatives, suggesting that the original feature set already contains sufficient predictive information.
+Overall, the results indicate that model performance is largely driven by a small number of highly informative features, particularly Glucose, while other variables provide complementary but less critical contributions.</p>
+<br/>
 </div>
 </div>
 </div>
