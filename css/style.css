@@ -6,8 +6,9 @@ body {
     padding: 40px 10px 40px 10px;
 }
 li {
-    display: block;
+    display: inline-block;
     list-style-type: none;
+    
 }
 a:link {
     text-decoration: none;
