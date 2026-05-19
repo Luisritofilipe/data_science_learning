@@ -8458,10 +8458,10 @@ memory usage: 4.1 MB
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <br/>
-<p>Additional features were engineered to capture both linear and non-linear degradation behavior, providing the models with more informative representations than the original sensor measurements alone and improving predictive performance. These engineered features were applied to all sensors used at this stage.
+<p>Additional features were engineered to capture both linear and non-linear degradation behavior, providing the models with more informative representations than the original sensor measurements alone and improving predictive performance. These engineered features were applied to all sensors used at this stage and consisted of a smoothed z-score, a band breakout binary signal, a simple moving average, and a Savitzky–Golay filter.
 
-<p>After evaluating multiple configurations of complex engineered features, no consistent improvement in predictive performance was observed. In contrast, Savitzky–Golay smoothing provided the best late-stage accuracy, suggesting that preserving the underlying degradation trajectory while reducing high-frequency noise was more effective than more complex feature engineering approaches based on statistical transformations.</p>
-<p>Therefore, a Savitzky–Golay (savgol) filter with a 51-period window and polynomial order of 1 was introduced to provide a smoother representation of the underlying sensor dynamics while maintaining lower lag compared to a simple moving average or a smoothed distance score relative to a baseline.</p>
+<p>After evaluating multiple configurations and combinations of the engineered features, the best performance was achieved using the Savitzky–Golay filter alone, particularly in terms of late-stage accuracy. This indicates that preserving the underlying degradation trajectory while reducing high-frequency noise was more effective than more complex feature engineering approaches tested in this study.</p>
+<p>Therefore, a Savitzky–Golay filter with a 51-period window and polynomial order of 1 was introduced to provide a smoother representation of the underlying sensor dynamics while maintaining lower lag compared to a simple moving average and alternative distance-based smoothing approaches.</p>
 <br/></p>
 </div>
 </div>
