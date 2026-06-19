@@ -8634,9 +8634,7 @@ memory usage: 308.7+ MB
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <br/>
-In this study only a subset from the 79 initial features was used (Flow Bytes/s, Flow Packets/s, Fwd Packets/s, Bwd Packets/s, Subflow Fwd Packets, Subflow Fwd Bytes, Packet Length Std, Packet Length Variance, Flow Duration, Init_Win_bytes_forward, Init_Win_bytes_backward, Down/Up Ratio, Label).
-
-<p>There are 10 features with only one unique value, which imply they have zero variance and cannot help distinguishing Label 0 vs Label 1. Mathematically, for models like logistic regression, the coefficient becomes meaningless and it may even cause numerical instability in some cases. If any of these were included in the subset used, it would also be removed.</p>
+<p>In this study only a subset from the 79 initial features was used (Flow Bytes/s, Flow Packets/s, Fwd Packets/s, Bwd Packets/s, Subflow Fwd Packets, Subflow Fwd Bytes, Packet Length Std, Packet Length Variance, Flow Duration, Init_Win_bytes_forward, Init_Win_bytes_backward, Down/Up Ratio, Label). There are 10 features with only one unique value, which imply they have zero variance and cannot help distinguishing Label 0 vs Label 1. Mathematically, for models like logistic regression, the coefficient becomes meaningless and it may even cause numerical instability in some cases. If any of these were included in the subset used, it would also be removed.</p>
 <p>Label feature contains three unique values. "BENIGN" will be replaced by 0 (normal), and "DDoS" and "PortScan" by 1 (malicious traffic). Label feature was renamed to Class. A space before or after each feature name was removed. A few rows with infinite values were removed. Rows with values of -1 in features "Init_Win_bytes_forward" and "Init_Win_bytes_backward" were removed as this is an indication that the information was not available or not applicable for a particular flow.
 <br/></p>
 </div>
@@ -8810,10 +8808,8 @@ In this study only a subset from the 79 initial features was used (Flow Bytes/s,
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <br/>
-The following chart illustrates the correlation between the target variable Class and the independent features. The results indicate that no feature exhibits a strong correlation, positive or negative.
-
-<p>It is important to note that correlation measures linear relationships only and does not capture potential nonlinear interactions between variables. Therefore, features with low correlation may still contribute to model performance when combined with other variables or when nonlinear effects are considered.
-<br/></p>
+<p>The following chart illustrates the correlation between the target variable Class and the independent features. The results indicate that no feature exhibits a strong correlation, positive or negative. It is important to note that correlation measures linear relationships only and does not capture potential nonlinear interactions between variables. Therefore, features with low correlation may still contribute to model performance when combined with other variables or when nonlinear effects are considered.</p>
+<br/>
 </div>
 </div>
 </div>
@@ -8836,10 +8832,10 @@ The following chart illustrates the correlation between the target variable Clas
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <br/>
-Boxplot analysis highlights that malicious traffic (Class 1) generally exhibits fewer outliers across most features, indicating more regular and constrained behavior compared to normal traffic, particularly in features such as “Subflow Fwd Bytes” and “Subflow Fwd Packets”.
+<p>Boxplot analysis highlights that malicious traffic (Class 1) generally exhibits fewer outliers across most features, indicating more regular and constrained behavior compared to normal traffic, particularly in features such as “Subflow Fwd Bytes” and “Subflow Fwd Packets”.
 This supports the idea that normal traffic, associated with browsing, streaming, downloads, and API interactions, is more diverse, whereas malicious traffic tends to be automated and repetitive in nature.
 However, feature "Flow Duration" shows notable outliers for malicious traffic, suggesting occasional extreme deviations, possibly corresponding to bursts of activity or sustained malicious traffic flows.
-Overall, malicious traffic patterns appear more structured but also revealing sporadic high-intensity events.
+Overall, malicious traffic patterns appear more structured but also revealing sporadic high-intensity events.</p>
 <br/>
 </div>
 </div>
@@ -8889,7 +8885,7 @@ X_test.shape= (114393, 9) Y_test.shape= (114393,)
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <br/>
-The number of duplicated rows in the dataset exceeds 160,000 when using the current subset of features. When the full feature set is used, this number decreases to approximately 68,000, indicating that feature selection increases the level of redundancy in the representation of network traffic flows.
+<p>The number of duplicated rows in the dataset exceeds 160,000 when using the current subset of features. When the full feature set is used, this number decreases to approximately 68,000, indicating that feature selection increases the level of redundancy in the representation of network traffic flows.</p>
 <br/>
 </div>
 </div>
@@ -8914,7 +8910,7 @@ The number of duplicated rows in the dataset exceeds 160,000 when using the curr
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <br/>
-The folowing shows that there are no overlapping rows between train and test datasets.
+<p>The folowing shows that there are no overlapping rows between train and test datasets.</p>
 <br/>
 </div>
 </div>
@@ -9057,7 +9053,7 @@ Below is the implementation of Logistic Regression with hyperparameter tuning, w
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <br/>
-The following table shows the computed feature coefficients ordered from highest to lowest.
+<p>The following table shows the computed feature coefficients ordered from highest to lowest.</p>
 <br/>
 </div>
 </div>
@@ -9137,7 +9133,7 @@ The following table shows the computed feature coefficients ordered from highest
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <br/>
-A confusion matrix is shown below for a minimum probability equal to the threshold corresponding to the maximum F1Score for a RecallScore equal or higher than 0.99.
+<p>A confusion matrix is shown below for a minimum probability equal to the threshold corresponding to the maximum F1Score for a RecallScore equal or higher than 0.99.</p>
 <br/>
 </div>
 </div>
@@ -9278,7 +9274,7 @@ A confusion matrix is shown below for a minimum probability equal to the thresho
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <br/>
-The following table shows the computed feature importance ordered from highest to lowest.
+<p>The following table shows the computed feature importance ordered from highest to lowest.</p>
 <br/>
 </div>
 </div>
@@ -9358,10 +9354,10 @@ The following table shows the computed feature importance ordered from highest t
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <br/>
-There is a noticeable difference in the importance attributed to features "Subflow Fwd Bytes" by each algorithm. "Subflow Fwd Bytes" measures how much forward data is transmitted within segments of a flow, providing insight into how traffic volume is distributed rather than just the total amount. A subflow is a segment of a larger flow. Malicious traffic flows (Class 1) tend to send less data forward per segment. This feature may reveal important patterns that can be captured by tree models such as Random Forest.
+<p>There is a noticeable difference in the importance attributed to features "Subflow Fwd Bytes" by each algorithm. "Subflow Fwd Bytes" measures how much forward data is transmitted within segments of a flow, providing insight into how traffic volume is distributed rather than just the total amount. A subflow is a segment of a larger flow. Malicious traffic flows (Class 1) tend to send less data forward per segment. This feature may reveal important patterns that can be captured by tree models such as Random Forest.
 
-<p>A confusion matrix is shown below for a minimum probability equal to the threshold corresponding to the maximum F1Score for a RecallScore equal or higher than 0.99.
-<br/></p>
+A confusion matrix is shown below for a minimum probability equal to the threshold corresponding to the maximum F1Score for a RecallScore equal or higher than 0.99.</p>
+<br/>
 </div>
 </div>
 </div>
@@ -9501,7 +9497,7 @@ There is a noticeable difference in the importance attributed to features "Subfl
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <br/>
-The following table shows the computed feature importance from highest to lowest.
+<p>The following table shows the computed feature importance from highest to lowest.</p>
 <br/>
 </div>
 </div>
@@ -9581,7 +9577,7 @@ The following table shows the computed feature importance from highest to lowest
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <br/>
-A confusion matrix is shown below for a minimum probability equal to the threshold corresponding to the maximum F1Score for a RecallScore equal or higher than 0.99.
+<p>A confusion matrix is shown below for a minimum probability equal to the threshold corresponding to the maximum F1Score for a RecallScore equal or higher than 0.99.</p>
 <br/>
 </div>
 </div>
@@ -9721,7 +9717,7 @@ A confusion matrix is shown below for a minimum probability equal to the thresho
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <br/>
-The following table shows the computed feature importance from highest to lowest.
+<p>The following table shows the computed feature importance from highest to lowest.</p>
 <br/>
 </div>
 </div>
@@ -9801,7 +9797,7 @@ The following table shows the computed feature importance from highest to lowest
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <br/>
-A confusion matrix is shown below for a minimum probability equal to the threshold corresponding to the maximum F1Score for a RecallScore equal or higher than 0.99.
+<p>A confusion matrix is shown below for a minimum probability equal to the threshold corresponding to the maximum F1Score for a RecallScore equal or higher than 0.99.</p>
 <br/>
 </div>
 </div>
@@ -9942,7 +9938,7 @@ A confusion matrix is shown below for a minimum probability equal to the thresho
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <br/>
-The following table shows the computed feature importance from highest to lowest.
+<p>The following table shows the computed feature importance from highest to lowest.</p>
 <br/>
 </div>
 </div>
@@ -10022,7 +10018,7 @@ The following table shows the computed feature importance from highest to lowest
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <br/>
-A confusion matrix is shown below for a minimum probability equal to the threshold corresponding to the maximum F1Score for a RecallScore equal or higher than 0.99.
+<p>A confusion matrix is shown below for a minimum probability equal to the threshold corresponding to the maximum F1Score for a RecallScore equal or higher than 0.99.</p>
 <br/>
 </div>
 </div>
@@ -10194,11 +10190,11 @@ A confusion matrix is shown below for a minimum probability equal to the thresho
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <br/>
-Based on the model comparison results, LightGBM, XGBoost, CatBoost, and Random Forest exhibit very similar performance, with only marginal differences across evaluation metrics.
+<p>Based on the model comparison results, LightGBM, XGBoost, CatBoost, and Random Forest exhibit very similar performance, with only marginal differences across evaluation metrics.</p>
 
 <p>All four tree-based models achieve near-perfect recall and precision, indicating that the dataset is highly separable using the selected flow-based features. LightGBM achieves slightly higher recall and F1-score at a tuned decision threshold while maintaining a very low number of false positives, which is desirable in intrusion detection systems where missed malicious traffic is costly.</p>
-<p>Although LightGBM shows marginally lower ROC-AUC and PR-AUC values compared to other models, these differences are negligible and do not impact practical performance.
-<br/></p>
+<p>Although LightGBM shows marginally lower ROC-AUC and PR-AUC values compared to other models, these differences are negligible and do not impact practical performance.</p>
+<br/>
 </div>
 </div>
 </div>
@@ -10221,11 +10217,11 @@ Based on the model comparison results, LightGBM, XGBoost, CatBoost, and Random F
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <br/>
-Overall, the extremely high performance across all models indicates that the dataset exhibits strong intrinsic separability, rather than the superiority of a specific algorithm.
+<p>Overall, the extremely high performance across all models indicates that the dataset exhibits strong intrinsic separability, rather than the superiority of a specific algorithm.</p>
 
 <p>In the context of network intrusion detection, recall is the most critical metric, as failing to detect malicious traffic has severe consequences. Precision remains important to limit false positives and maintain system usability. Given these considerations, and its slightly superior recall performance under threshold tuning, LightGBM is selected as the final model.</p>
-<p>It is important to note that the dataset presents moderate class imbalance (aprox. 69% malicious traffic), and the near-perfect evaluation metrics suggest that results may be influenced by the structured nature of the dataset.
-<br/></p>
+<p>It is important to note that the dataset presents moderate class imbalance (aprox. 69% malicious traffic), and the near-perfect evaluation metrics suggest that results may be influenced by the structured nature of the dataset.</p>
+<br/>
 </div>
 </div>
 </div>
@@ -10236,7 +10232,7 @@ Overall, the extremely high performance across all models indicates that the dat
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <br/>
-The ROC curves below for the top four models are nearly identical and exhibit a near-square shape, indicating extremely high class separability and similar ranking performance. This suggests that model choice has minimal impact, as the underlying feature space already allows for near-perfect discrimination between classes. Differences in classification metrics are therefore negligible and within expected variance.
+<p>The ROC curves below for the top four models are nearly identical and exhibit a near-square shape, indicating extremely high class separability and similar ranking performance. This suggests that model choice has minimal impact, as the underlying feature space already allows for near-perfect discrimination between classes. Differences in classification metrics are therefore negligible and within expected variance.</p>
 <br/>
 </div>
 </div>
@@ -10260,10 +10256,10 @@ The ROC curves below for the top four models are nearly identical and exhibit a 
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <br/>
-The calibration curves below for the top-performing models exhibit irregular shapes, particularly in the mid-probability range, with most predicted probabilities concentrated near 0 or 1. This suggests that the models tend to produce highly confident predictions, which may indicate strong class separability in feature space or model overconfidence resulting from overfitting, leading to near-deterministic probability outputs rather than well-calibrated probabilistic estimates.
+<p>The calibration curves below for the top-performing models exhibit irregular shapes, particularly in the mid-probability range, with most predicted probabilities concentrated near 0 or 1. This suggests that the models tend to produce highly confident predictions, which may indicate strong class separability in feature space or model overconfidence resulting from overfitting, leading to near-deterministic probability outputs rather than well-calibrated probabilistic estimates.</p>
 
-<p>This behavior could potentially be influenced by the presence of more than 160,000 duplicated rows in the dataset, which correspond to repeated network traffic flows exhibiting identical values across the selected feature set. These duplicates are not artifacts of data fabrication, but rather reflect recurring observations of the same traffic patterns. However, a second experiment in which duplicated rows were removed yielded similar “near-perfect” performance metrics and an even more binary calibration curve, suggesting that data duplication alone does not fully explain the observed overconfidence.
-<br/></p>
+<p>This behavior could potentially be influenced by the presence of more than 160,000 duplicated rows in the dataset, which correspond to repeated network traffic flows exhibiting identical values across the selected feature set. These duplicates are not artifacts of data fabrication, but rather reflect recurring observations of the same traffic patterns. However, a second experiment in which duplicated rows were removed yielded similar “near-perfect” performance metrics and an even more binary calibration curve, suggesting that data duplication alone does not fully explain the observed overconfidence.</p>
+<br/>
 </div>
 </div>
 </div>
@@ -10286,9 +10282,9 @@ The calibration curves below for the top-performing models exhibit irregular sha
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <br/>
-An inspection also confirmed that there are no overlapping rows in the dataset. After ruling out several potential sources of data leakage, an additional experiment was conducted to evaluate whether model capacity was contributing to the observed performance. The capacity of the best-performing model, LightGBM, was reduced by decreasing max_depth to 5 and num_leaves to 15. Despite this constraint, the model achieved nearly identical performance, suggesting that high model complexity is not the primary driver of the results. Instead, the results may be driven by the high separability of classes in this dataset.
-<br>
-</br></div>
+<p>An inspection also confirmed that there are no overlapping rows in the dataset. After ruling out several potential sources of data leakage, an additional experiment was conducted to evaluate whether model capacity was contributing to the observed performance. The capacity of the best-performing model, LightGBM, was reduced by decreasing max_depth to 5 and num_leaves to 15. Despite this constraint, the model achieved nearly identical performance, suggesting that high model complexity is not the primary driver of the results. Instead, the results may be driven by the high separability of classes in this dataset.</p>
+<br/>
+</div>
 </div>
 </div>
 </div>
@@ -10297,9 +10293,9 @@ An inspection also confirmed that there are no overlapping rows in the dataset. 
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><br>
-The SHAP summary plot below indicates that malicious traffic detection is driven by several key features. Subflow Fwd Bytes is among the features with the strongest influence, with a portion of higher values strongly associated with a decreased probability of malicious traffic, while lower exhibit a less consistent effect. Higher values of Packet Length Std and Init_Win_bytes_forward are also strongly associated with an increased likelihood of malicious traffic. In contrast, higher values of Init_Win_bytes_backward and Down/Up Ratio contribute to a decreased probability of malicious traffic classification.
-<br/></br></p>
+<br>
+<p>The SHAP summary plot below indicates that malicious traffic detection is driven by several key features. Subflow Fwd Bytes is among the features with the strongest influence, with a portion of higher values strongly associated with a decreased probability of malicious traffic, while lower exhibit a less consistent effect. Higher values of Packet Length Std and Init_Win_bytes_forward are also strongly associated with an increased likelihood of malicious traffic. In contrast, higher values of Init_Win_bytes_backward and Down/Up Ratio contribute to a decreased probability of malicious traffic classification.</p>
+<br/>
 </div>
 </div>
 </div>
@@ -10322,7 +10318,7 @@ The SHAP summary plot below indicates that malicious traffic detection is driven
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <br/>
-The SHAP dependence plot illustrates how Subflow Fwd Bytes influences model predictions, with values colored by Packet Length Std, the feature with the strongest interaction. The SHAP values are predominantly negative, mostly below 5, indicating that higher values of Subflow Fwd Bytes generally push predictions toward the normal traffic class. At low values of Subflow Fwd Bytes, the contribution is more variable, reflecting greater model uncertainty. As the feature value increases, the SHAP values stabilize in the negative range. The interaction with Packet Length Std primarily affects the magnitude of this contribution: higher values of Packet Length Std tend to amplify the negative impact, while lower values are associated with more dispersed effects.
+<p>The SHAP dependence plot illustrates how Subflow Fwd Bytes influences model predictions, with values colored by Packet Length Std, the feature with the strongest interaction. The SHAP values are predominantly negative, mostly below 5, indicating that higher values of Subflow Fwd Bytes generally push predictions toward the normal traffic class. At low values of Subflow Fwd Bytes, the contribution is more variable, reflecting greater model uncertainty. As the feature value increases, the SHAP values stabilize in the negative range. The interaction with Packet Length Std primarily affects the magnitude of this contribution: higher values of Packet Length Std tend to amplify the negative impact, while lower values are associated with more dispersed effects.</p>
 <br/>
 </div>
 </div>
