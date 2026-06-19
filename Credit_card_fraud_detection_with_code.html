@@ -10319,7 +10319,7 @@ Below is the implementation of Logistic Regression with hyperparameter tuning, w
         <span class="n">roc</span> <span class="o">=</span> <span class="n">roc_auc_score</span><span class="p">(</span><span class="n">Y_test</span><span class="p">,</span> <span class="n">model</span><span class="p">[</span><span class="s2">"y_proba"</span><span class="p">])</span>
         <span class="n">pr</span> <span class="o">=</span> <span class="n">average_precision_score</span><span class="p">(</span><span class="n">Y_test</span><span class="p">,</span> <span class="n">model</span><span class="p">[</span><span class="s2">"y_proba"</span><span class="p">])</span>
         <span class="n">df</span><span class="p">[</span><span class="s2">"LogLoss"</span><span class="p">]</span> <span class="o">=</span> <span class="n">logloss</span>
-        <span class="n">df</span><span class="p">[</span><span class="s2">"BrierScoreLoss"</span><span class="p">]</span> <span class="o">=</span> <span class="n">brier</span>
+        <span class="n">df</span><span class="p">[</span><span class="s2">"BrierScore"</span><span class="p">]</span> <span class="o">=</span> <span class="n">brier</span>
         <span class="n">df</span><span class="p">[</span><span class="s2">"ROC_AUC"</span><span class="p">]</span> <span class="o">=</span> <span class="n">roc</span>
         <span class="n">df</span><span class="p">[</span><span class="s2">"PR_AUC"</span><span class="p">]</span> <span class="o">=</span> <span class="n">pr</span>
         <span class="n">df_all</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
@@ -10386,7 +10386,7 @@ Below is the implementation of Logistic Regression with hyperparameter tuning, w
 <th>FN</th>
 <th>MCC</th>
 <th>LogLoss</th>
-<th>BrierScoreLoss</th>
+<th>BrierScore</th>
 <th>ROC_AUC</th>
 <th>PR_AUC</th>
 </tr>
