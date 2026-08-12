@@ -10903,7 +10903,7 @@ memory usage: 1.4+ GB
 <div class="jp-InputPrompt jp-InputArea-prompt">In [25]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">top_20_department_association_treemap</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">plot_top_20_department_associations</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
     <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">nlargest</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="s2">"Count"</span><span class="p">)[[</span><span class="s2">"Count"</span><span class="p">,</span> <span class="s2">"DepartmentA"</span><span class="p">,</span> <span class="s2">"DepartmentB"</span><span class="p">]]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
     <span class="n">data</span><span class="p">[</span><span class="s2">"Association"</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">"DepartmentA"</span><span class="p">]</span> <span class="o">+</span> <span class="s2">" &amp; "</span> <span class="o">+</span> <span class="n">data</span><span class="p">[</span><span class="s2">"DepartmentB"</span><span class="p">]</span>
     <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">"DepartmentA"</span><span class="p">,</span> <span class="s2">"DepartmentB"</span><span class="p">])</span>
@@ -10934,7 +10934,7 @@ memory usage: 1.4+ GB
     <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="s2">"Count"</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">*</span> <span class="mf">1.15</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-<span class="n">top_20_department_association_treemap</span><span class="p">(</span><span class="n">depart_pair_df</span><span class="p">)</span>
+<span class="n">plot_top_20_department_associations</span><span class="p">(</span><span class="n">depart_pair_df</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
