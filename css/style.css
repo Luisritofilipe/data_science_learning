@@ -47,13 +47,13 @@ h2 {
 }
 
 .project-links {
-    font-size: 17px;
+    font-size: 16px;
 }
 
 .project-links a {
     color: #333;
     /* text-decoration: none; */
-    margin-right: 17px;
+    margin-right: 15px;
 }
 
 .project-links a:hover {
