@@ -8091,7 +8091,7 @@ memory usage: 83.3 KB
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p><br/></p>
-<p>In the following table, features identified with "True" include rows with missing values ("BP(Diastolic)" and "SkinThickness(mm)").</p>
+<p>The following table presents features with missing values and respective count ("BP(Diastolic)" and "SkinThickness(mm)").</p>
 <br/>
 </div>
 </div>
@@ -8104,7 +8104,7 @@ memory usage: 83.3 KB
 <div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">any</span><span class="p">()</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">to_frame</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">"Count"</span><span class="p">)</span><span class="o">.</span><span class="n">rename_axis</span><span class="p">(</span><span class="s2">"Feature"</span><span class="p">)</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">"Count &gt; 0"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8117,17 +8117,43 @@ memory usage: 83.3 KB
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[3]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>Pregnancies                 False
-Age                         False
-BMI                         False
-BP(Systolic)                False
-BP(Diastolic)                True
-DiabetesPedigreeFunction    False
-Insulin                     False
-SkinThickness(mm)            True
-Type 2 Diabetic             False
-Glucose                     False
-dtype: bool</pre>
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>Count</th>
+</tr>
+<tr>
+<th>Feature</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>BP(Diastolic)</th>
+<td>4</td>
+</tr>
+<tr>
+<th>SkinThickness(mm)</th>
+<td>7</td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 </div>
 </div>
