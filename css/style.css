@@ -45,7 +45,7 @@ h2 {
 
 .project-description {
     font-size: 16px;
-    color: #006633;
+    color: #000033;
     margin: 0 0 7px 0;
 }
 
@@ -54,13 +54,13 @@ h2 {
 }
 
 .project-links a {
-    color: #003366;
+    color: #006633;
     /* text-decoration: none; */
     margin-right: 15px;
 }
 
 .project-links a:hover {
-    color: #0033cc;
+    color: #00cc33;
     text-decoration: underline;
 }
 
