@@ -9,19 +9,21 @@ body {
 }
 
 h1 {
+    color: #003399;
     font-size: 32px;
     font-weight: 600;
     margin-bottom: 5px;
 }
 
 .subtitle {
-    color: #33339c;
+    color: #333;
     font-size: 22px;
     margin-top: 0;
     margin-bottom: 40px;
 }
 
 h2 {
+    color: #003399;
     font-size: 22px;
     font-weight: 600;
     margin-top: 40px;
@@ -35,6 +37,7 @@ h2 {
 }
 
 .project-title {
+    color: #0000cc;
     font-size: 18px;
     font-weight: 600;
     margin-bottom: 3px;
